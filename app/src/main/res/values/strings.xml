@@ -1,0 +1,55 @@
+<resources>
+    <!-- 标题栏文字 -->
+    <string name="app_name">市场调查问卷</string>
+
+    <!-- 首页菜单左测按钮 -->
+    <string name="tab_menu1">医院</string>
+
+    <!-- 首页菜单右测按钮 -->
+    <string name="tab_menu2">市场</string>
+
+    <!-- 用于tab页签显示的栏目column-->
+    <string-array name="subject_array">
+        <item>医院</item>
+        <item>现场</item>
+    </string-array>
+
+    <!-- 医院column下的标题topic -->
+    <string-array name="topic_array_1">
+        <item>询问笔录（医院大夫）</item>
+        <item>询问笔录（事发单位或病人代表）</item>
+    </string-array>
+
+    <!-- 现场subject下的标题topic -->
+    <string-array name="topic_array_2">
+        <item>现场笔录</item>
+        <item>询问笔录（肇事单位）</item>
+        <item>询问笔录（肇事厨师）</item>
+    </string-array>
+
+    <!-- 要跳转的activity -->
+    <string-array name="topiccode_array_1">
+        <item>A01</item>
+        <item>A02</item>
+    </string-array>
+
+    <!-- 要跳转的activity -->
+    <string-array name="topiccode_array_2">
+        <item>B01</item>
+        <item>B02</item>
+        <item>B03</item>
+    </string-array>
+
+    <!-- 要跳转的activity -->
+    <string-array name="pages_array_1">
+        <item>3</item>
+        <item>2</item>
+    </string-array>
+
+    <!-- 要跳转的activity -->
+    <string-array name="pages_array_2">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+</resources>
