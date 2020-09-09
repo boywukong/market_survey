@@ -32,6 +32,7 @@ img {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+	margin: 0px;
 }
 input, button, select, textarea{
 outline: none;
@@ -41,33 +42,33 @@ border-radius: 0;
 
 .biao_title{text-align:center; font-family:'Microsoft YaHei'; padding:30px 0px;}
 .biao_title h2{ color:#000;}
-.biao_title p{font-size:20px; padding-top:10px;}
-.table_list{padding:8px 8px; width:768px; margin:0 auto; margin-bottom:50px;}
+.biao_title p{font-size:26px; padding-top:10px;}
+.table_list{padding:8px 8px; width:852px; margin:0 auto; margin-bottom:50px;}
 .container table td{ border:0;}
-.table_list td{display:block;font-family:'Microsoft YaHei'; font-size:16px; color:#000; text-align:left;}
-.table_list td textarea{border:1px solid #000; border-radius:0; background-color:transparent; padding:10px 10px;font-size:16px; color:#000;resize:none}
+.table_list td{display:block;font-family:'Microsoft YaHei'; font-size:26px; color:#000; text-align:left;}
+.table_list td textarea{border:1px solid #000; border-radius:0; background-color:transparent; padding:10px 10px;font-size:26px; color:#000;resize:none}
 .biaoge_k{ width:100%;}
-.table_list td input{border-top: 0px; border-left: 0px; border-right: 0px;border-bottom:1px solid #000; border-radius:0; background-color:transparent;padding:0px 10px;font-size:16px; color:#000;}
+.table_list td input{border-top: 0px; border-left: 0px; border-right: 0px;border-bottom:1px solid #000; border-radius:0; background-color:transparent;padding:0px 10px;font-size:26px; color:#000;}
 .table_list input:hover,.table_list input a:focus,.table_list input a:hover,.table_list input a:focus{box-shadow:none;}
-.biaoge_01{width:60px; text-align:center;}
-.biaoge_02{width:50px; text-align:center;}
-.biaoge_13{width:80px; text-align:center;}
-.biaoge_14{width:60px; text-align:center;}
-.biaoge_03{width:704px;}
-.biaoge_04{width:295px;}
-.biaoge_15{width:304px;}
-.biaoge_16{width:344px;}
-.biaoge_17{width:290px;}
-.biaoge_18{width:334px;}
-.biaoge_19{width:384px;}
-.biaoge_20{width:560px;}
-.biaoge_21{width:496px;}
-.biaoge_22{width:388px;}
-.biaoge_23{width:750px;}
+.biaoge_01{width:46px; text-align:center;}
+.biaoge_02{width:46px; text-align:center;}
+.biaoge_13{width:50px; text-align:center;}
+.biaoge_14{width:50px; text-align:center;}
+.biaoge_03{width:750px;}
+.biaoge_04{width:284px;}
+.biaoge_15{width:297px;}
+.biaoge_16{width:260px;}
+.biaoge_17{width:300px;}
+.biaoge_18{width:320px;}
+.biaoge_19{width:246px;}
+.biaoge_20{width:519px;}
+.biaoge_21{width:400px;}
+.biaoge_22{width:350px;}
+.biaoge_23{width:830px;}
 .biaoge_05{width:640px;}
-.biaoge_06{width:512px;}
-.biaoge_07{width:277px;}
-.biaoge_08{width:672px;}
+.biaoge_06{width:462px;}
+.biaoge_07{width:255px;}
+.biaoge_08{width:700px;}
 .biaoge_09{width:592px;}
 .biaoge_10{width:528px;}
 .biaoge_11{width:292px;}

@@ -1,12 +1,7 @@
 package com.tyh.marketresearch_shichangju.fragment;
 
 import android.annotation.TargetApi;
-import android.app.Activity;
-import android.content.ComponentName;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -20,14 +15,12 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
 import com.google.gson.Gson;
 import com.independentsoft.xml.stream.XMLStreamException;
 import com.tyh.marketresearch_shichangju.R;
-import com.tyh.marketresearch_shichangju.activity.MainActivity;
 import com.tyh.marketresearch_shichangju.util.ActivityUtil;
 import com.tyh.marketresearch_shichangju.util.TemplateIO;
 
@@ -37,25 +30,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * Fragmenta0101主要完成下面几件事：
- * 1.加载问卷1的布局和内容
- * 2.问卷1的页面内容：biao_03.html
- * 3.问卷1的按钮点击事件
- * 4.问卷1打印模板wenjuan_01_
+ * Fragmenta0203主要完成下面几件事：
+ * 1.加载问卷5的布局和内容
+ * 2.问卷5的页面内容：biao_04.html
+ * 3.问卷5的按钮点击事件
+ * 4.问卷5打印模板wenjuan_05_
  *
  **/
-public class Fragmenta0101 extends Fragment {
+public class Fragmenta0203 extends Fragment {
 
     private String topic;
     private WebView mWebView;
     private String lastDocName;
 
-    public Fragmenta0101() {
+    public Fragmenta0203() {
         // Required empty public constructor
         super();
     }
 
-    public Fragmenta0101(String topic) {
+    public Fragmenta0203(String topic) {
         super();
         this.topic = topic;
     }
@@ -81,14 +74,14 @@ public class Fragmenta0101 extends Fragment {
         //html5页面
         WebView webview = (WebView) contentView.findViewById(R.id.webview);
         //webview.loadUrl("file:///android_asset/dcwj/dcwj_a0101.html");
-        Log.i("----Fragmenta0103----","file:///android_asset/html/biao_03.html");
+        Log.i("----Fragmenta0203----","file:///android_asset/html/biao_04.html");
 
         webview.getSettings().setUseWideViewPort(true);
         webview.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
         webview.getSettings().setLoadWithOverviewMode(true);
         initView(webview);
 
-        webview.loadUrl("file:///android_asset/html/biao_03.html");
+        webview.loadUrl("file:///android_asset/html/biao_04.html");
         return contentView;
     }
 
@@ -122,15 +115,15 @@ public class Fragmenta0101 extends Fragment {
             Map paramMap = new HashMap();
             paramMap = gson.fromJson(gsonStr,Map.class);
 
-            String templateName = "template/" + ActivityUtil.WENJUAN_01_PREFIX + ".docx";
+            String templateName = "template/"+ActivityUtil.WENJUAN_05_PREFIX + ".docx";
 
             String targetUrl = Environment.getExternalStorageDirectory().toString()
-                                + File.separator
-                                + ActivityUtil.INQUIRE_DIR
-                                + File.separator
-                                + ActivityUtil.WENJUAN_01_PREFIX
-                                + TemplateIO.getTemplateTime()
-                                + ".docx";
+                    + File.separator
+                    + ActivityUtil.INQUIRE_DIR
+                    + File.separator
+                    + ActivityUtil.WENJUAN_05_PREFIX
+                    + TemplateIO.getTemplateTime()
+                    + ".docx";
 
             setLastDocName(targetUrl);
             //Log.i("----TemplateIO----", paramMap.toString());
@@ -142,6 +135,7 @@ public class Fragmenta0101 extends Fragment {
 
             Toast.makeText(getContext(), "保存成功!", Toast.LENGTH_SHORT)
                     .show();
+
         }
 
         @JavascriptInterface
@@ -150,7 +144,7 @@ public class Fragmenta0101 extends Fragment {
                     + File.separator
                     + ActivityUtil.INQUIRE_DIR
                     + File.separator
-                    + ActivityUtil.WENJUAN_01_PREFIX+".docx";*/
+                    + ActivityUtil.WENJUAN_05_PREFIX + ".docx";*/
 
             String targetUrl = getLastDocName();
             Log.i("----toPrinter----",targetUrl);
@@ -184,6 +178,5 @@ public class Fragmenta0101 extends Fragment {
         public void toViewPaizhao() {
             ActivityUtil.initViewPaizhao(getActivity());
         }
-
     }
 }

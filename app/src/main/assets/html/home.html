@@ -6,13 +6,19 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/home.css" rel="stylesheet">
 </head>
+<script>
+function toActivity(param){
+    //调用本地的类(js)的jumpActivity()方法;
+    window.js.jumpActivity(param);
+}
+</script>
 <body style="background:url(images/bj.jpg) no-repeat 100% 100%; width:100%; height:100%;background-size:100% 100%;" >
 <div class="container home_cont">
     <h1>平谷区市场局应急管理系统</h1>
   <div class="row home_list">
-  <a href="list.html">
+  <a href="#">
   <div class="col-xs-4 col-md-4">
-    <img src="images/home_tb01.png" class="img-responsive" alt="食品"/>
+    <img src="images/home_tb01.png" class="img-responsive" alt="食品" onClick="toActivity(0);"/>
     <span class="home_zt">食品</span>
     </div>
   </a>

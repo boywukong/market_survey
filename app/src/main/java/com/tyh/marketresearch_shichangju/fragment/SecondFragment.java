@@ -22,6 +22,14 @@ import com.tyh.marketresearch_shichangju.adapter.TopicListAdapter;
 
 import java.util.Arrays;
 
+/*
+ * SecondFragment主要完成下面几件事：
+ * 1.加载主页面上的Tab2中的菜单布局 list view
+ * 2. 给list view传递参数
+ * 3.加载 list view数据
+ * 4.设置 list view点击事件
+ *
+ **/
 public class SecondFragment extends Fragment {
 
 
@@ -53,8 +61,10 @@ public class SecondFragment extends Fragment {
                                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                                 // Bundle传递数据
                                                 Bundle bundle = new Bundle();
+                                                bundle.putString("fragcode","02");
                                                 bundle.putString("topic",topics[position]);
                                                 bundle.putString("topiccode",topiccodes[position]);
+                                                bundle.putString("position",Integer.toString(position));
 
                                                 Intent intent = new Intent(getContext(), DetailPageActivity.class);
 

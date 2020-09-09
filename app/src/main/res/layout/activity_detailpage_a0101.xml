@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.MainActivity">
+    tools:context="com.tyh.marketresearch_shichangju.fragment.Fragmenta0101">
 
+    <!-- 详情页的问卷标题 -->
+    <!--
     <TextView
         android:id="@+id/detail_page_a0101"
         android:layout_width="411dp"
         android:layout_height="50dp"
-        android:textStyle="bold"
-        android:paddingLeft="50dp"
-        android:text="                   page_a0101"
+        android:layout_gravity="center"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></TextView>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
@@ -23,6 +23,14 @@
         android:layout_marginTop="50dp"
         android:text="TextView1111111111"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></TextView>
+        app:layout_constraintTop_toTopOf="parent" />
+    -->
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></WebView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

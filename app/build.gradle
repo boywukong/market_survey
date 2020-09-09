@@ -5,12 +5,17 @@ android {
 
     defaultConfig {
         applicationId "com.tyh.marketresearch_shichangju"
-        minSdkVersion 16
+        minSdkVersion 26
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
     }
 
     buildTypes {
@@ -29,8 +34,10 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment:2.3.0'
     implementation 'androidx.navigation:navigation-ui:2.3.0'
     implementation 'androidx.viewpager:viewpager:1.0.0'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation files('libs\\jword-1.0.jar')
+    //implementation 'com.qmuiteam:qmui:2.0.0-alpha10'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-
 }

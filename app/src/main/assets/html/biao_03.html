@@ -5,22 +5,98 @@
 <title>北京市平谷区市场监督管理局</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/home.css" rel="stylesheet">
+<script language="JavaScript" src="js/jquery-3.4.1.min.js"></script>
 </head>
+<script>
+function toActivity(param){
+    //调用本地的类(js)的jumpActivity()方法;
+    window.js.jumpActivity(param);
+}
+
+function toSaveData() {
+    var param = {
+        vyear : $('#vyear').val(),
+        vmonth : $('#vmonth').val(),
+        vday : $('#vday').val(),
+        vhour1 : $('#vday').val(),
+        vminute1 : $('#vminute1').val(),
+        vhour2 : $('#vhour2').val(),
+        vminute2 : $('#vminute2').val(),
+        vtimes : $('#vtimes').val(),
+        vaddr : $('#vaddr').val(),
+        vinquirer1 : $('#vinquirer1').val(),
+        vcredNo1 : $('#vcredNo1').val(),
+        vinquirer2 : $('#vinquirer2').val(),
+        vcredNo2 : $('#vcredNo2').val(),
+        vinterviewee : $('#vinterviewee').val(),
+        vsex : $('#vsex').val(),
+        vidNo : $('#vidNo').val(),
+        vcompany : $('#vcompany').val(),
+        vposition : $('#vposition').val(),
+        vtelNo : $('#vtelNo').val(),
+        vcontact : $('#vcontact').val(),
+        vcontactAddr : $('#vcontactAddr').val(),
+        vbureau : $('#vbureau').val(),
+        visClear1 : $('#visClear1').val(),
+        vorigin : $('#vorigin').val(),
+        visAvoid : $('#visAvoid').val(),
+        visClear2 : $('#visClear2').val(),
+        vsignYear1 : $('#vsignYear1').val(),
+        vsignMonth1 : $('#vsignMonth1').val(),
+        vsignDay1 : $('#vsignDay1').val(),
+        vsignYear2 : $('#vsignYear2').val(),
+        vsignMonth2 : $('#vsignMonth2').val(),
+        vsignDay2 : $('#vsignDay2').val(),
+        vsignYear3 : $('#vsignYear3').val(),
+        vsignMonth3 : $('#vsignMonth3').val(),
+        vsignDay3 : $('#vsignDay3').val(),
+        vsignYear4 : $('#vsignYear4').val(),
+        vsignMonth4 : $('#vsignMonth4').val(),
+        vsignDay4 : $('#vsignDay4').val(),
+        vanswer1 : $('#vanswer1').val(),
+        vanswer2 : $('#vanswer2').val(),
+        vanswer3 : $('#vanswer3').val(),
+        vanswer4 : $('#vanswer4').val(),
+        vanswer5 : $('#vanswer5').val(),
+        vanswer6 : $('#vanswer6').val(),
+        vanswer7 : $('#vanswer7').val(),
+        vanswer8 : $('#vanswer8').val(),
+        vanswer9 : $('#vanswer9').val()
+    }
+    //调用本地的类(js)的inquireData()方法;
+    window.js.inquireData(JSON.stringify(param));
+}
+
+function toPrinter() {
+    //调用本地的类(js)toPrinter()方法;
+    window.js.toPrinter();
+}
+
+function toViewLuyin() {
+    //调用本地的类(js)toViewLuyin()方法;
+    window.js.toViewLuyin();
+}
+
+function toViewPaizhao() {
+    //调用本地的类(js)toViewPaizhao()方法;
+    window.js.toViewPaizhao();
+}
+</script>
 <body>
 <div class="navbar-fixed-top">
 <header class="list_bj">
  <h1>食品</h1>
- <a href="list.html" class="left">
-   <img src="images/back.png" alt="列表" class="img-responsive"/>
- </a>
- <a href="home.html" class="right">
-   <img src="images/home.png" alt="主页" class="img-responsive"/>
- </a>
+    <a href="#" class="left">
+        <img src="images/back.png" alt="列表" class="img-responsive" onClick="toActivity(0);"/>
+    </a>
+    <a href="#" class="right">
+        <img src="images/home.png" alt="主页" class="img-responsive" onClick="toActivity(1);"/>
+    </a>
 </header>
 <section class="list_gn">
    <div class="row list_angn">
-     <div class="col-xs-6" style="padding-left:0;padding-right:30px;"><button type="button" class="btn btn-primary btn-lg btn-block gn_an01"><img src="images/ly.png"  alt="录音" style="margin-bottom:5px;"/>&nbsp;&nbsp;录 音</button></div>
-     <div class="col-xs-6" style="padding-right:0;padding-left:30px;"><button type="button" class="btn btn-default btn-lg btn-block gn_an02"><img src="images/pz.png"  alt="拍照" style="margin-bottom:5px;"/>&nbsp;&nbsp;拍 照</button></div>
+     <div class="col-xs-6" style="padding-left:0;padding-right:30px;"><button type="button" class="btn btn-primary btn-lg btn-block gn_an01" onclick="toViewLuyin()"><img src="images/ly.png"  alt="录音" style="margin-bottom:5px;"/>&nbsp;&nbsp;录 音</button></div>
+     <div class="col-xs-6" style="padding-right:0;padding-left:30px;"><button type="button" class="btn btn-default btn-lg btn-block gn_an02" onclick="toViewPaizhao()"><img src="images/pz.png"  alt="拍照" style="margin-bottom:5px;"/>&nbsp;&nbsp;拍 照</button></div>
   </div>
 </section>
 </div>
@@ -28,63 +104,63 @@
   <div class="biao_title">
    <h2>北京市平谷区市场监督管理局
 </h2>
-   <p>询&nbsp;&nbsp;问&nbsp;&nbsp;笔&nbsp;&nbsp;录&nbsp;&nbsp;<span style="font-size:16px;">(医院大夫)</span></p>
+   <p>询&nbsp;&nbsp;问&nbsp;&nbsp;笔&nbsp;&nbsp;录&nbsp;&nbsp;<span>(医院大夫)</span></p>
    </div>
    
    
  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table_list">
   <tbody>
     <tr>
-      <td>时间：<input type="text" class="biaoge_13"> 年<input type="text" class="biaoge_14">月<input type="text" class="biaoge_14">日<input type="text" class="biaoge_14">时<input type="text" class="biaoge_14">分至<input type="text" class="biaoge_14">时<input type="text" class="biaoge_14">分&nbsp;&nbsp;&nbsp;&nbsp;第<input type="text" class="biaoge_13">次
+      <td>时间：<input id="vyear" type="text" class="biaoge_13" style="width: 80px;"> 年<input id="vmonth" type="text" class="biaoge_14">月<input id="vday" type="text" class="biaoge_14">日<input id="vhour1" type="text" class="biaoge_14">时<input id="vminute1" type="text" class="biaoge_14">分至<input type="text" id="vhour2" class="biaoge_14">时<input id="vminute2" type="text" class="biaoge_14">分&nbsp;&nbsp;&nbsp;&nbsp;第<input id="vtimes" type="text" class="biaoge_13">次
       </td>
       <td>
-      地点：<input type="text" class="biaoge_03">
+      地点：<input id="vaddr" type="text" class="biaoge_03">
       </td>
       <td>
-      询问人：<input type="text" class="biaoge_15">执法证号：<input type="text" class="biaoge_15">
+      询问人：<input id="vinquirer1" type="text" class="biaoge_15">执法证号：<input id="vcredNo1" type="text" class="biaoge_15">
       </td>
       <td>
-      询问人：<input type="text" class="biaoge_15">执法证号：<input type="text" class="biaoge_15">
+      询问人：<input id="vinquirer2" type="text" class="biaoge_15">执法证号：<input id="vcredNo2" type="text" class="biaoge_15">
       </td>
       <td>
-      被询问人：<input type="text" class="biaoge_17">性别：<input type="text" class="biaoge_18">
+      被询问人：<input id="vinterviewee" type="text" class="biaoge_17">性别：<input id="vsex" type="text" class="biaoge_18">
       </td>
        <td>
-      身份证（其他有效证件）号码：<input type="text" class="biaoge_06" style="width:528px;">
+      身份证（其他有效证件）号码：<input id="vidNo" type="text" class="biaoge_06">
       </td>
          <td>
-      工作单位：<input type="text" class="biaoge_17">职务：<input type="text" class="biaoge_18">
+      工作单位：<input id="vcompany" type="text" class="biaoge_17">职务：<input id="vposition" type="text" class="biaoge_18">
       </td>
        <td>
-      联系电话：<input type="text" class="biaoge_07" > 其他联系方式：<input type="text" class="biaoge_07">            
+      联系电话：<input id="vtelNo" type="text" class="biaoge_07" > 其他联系方式：<input id="vcontact" type="text" class="biaoge_07">
       </td>
       <td>
-      联系地址：<input type="text" class="biaoge_08">
+      联系地址：<input id="vcontactAddr" type="text" class="biaoge_08">
       </td>
      
        <td>
-         询问人（以下简称问）：你好，我们是<input type="text" class="biaoge_19" >的执法人员，已向你出示了我们的执法证件。你是否看清楚？
+         询问人（以下简称问）：你好，我们是<input id="vbureau" type="text" class="biaoge_19" >的执法人员，已向你出示了我们的执法证件。你是否看清楚？
       </td>
       <td>
-         被询问人（以下简称答）：<input type="text" class="biaoge_20" value="我听清楚了" onfocus="this.value=''" onblur="this.value='我听清楚了。">
+         被询问人（以下简称答）：<input id="visClear1" type="text" class="biaoge_20" value="我听清楚了" onfocus="this.value=''" onblur="this.value='我听清楚了。">
       </td>
       <td>
-         <b>问：</b>我们依法就<input type="text" class="biaoge_21" value="?名呕吐腹泻患者到你院肠道门诊就诊一事" onfocus="this.value=''" onblur="this.value='?名呕吐腹泻患者到你院肠道门诊就诊一事。">有关问题进行调查，请予配合。依照法律规定，你有权进行陈述和申辩。如果你认为调查人员与本案有直接利害关系的，依法有申请回避的权利，你是否申请调查人回避？
+         <b>问：</b>我们依法就<input id="vorigin" type="text" class="biaoge_21" value="?名呕吐腹泻患者到你院肠道门诊就诊一事" onfocus="this.value=''" onblur="this.value='?名呕吐腹泻患者到你院肠道门诊就诊一事。">有关问题进行调查，请予配合。依照法律规定，你有权进行陈述和申辩。如果你认为调查人员与本案有直接利害关系的，依法有申请回避的权利，你是否申请调查人回避？
       </td>
       <td>
-      <input type="text" class="biaoge_23" value="答：" onfocus="this.value=''" onblur="this.value='答：" style="padding:0;">
+      <input id="visAvoid" type="text" class="biaoge_23" value="答：" onfocus="this.value=''" onblur="this.value='答：" style="padding:0;">
       </td>
       <td>
          <b>问：</b>你应当如实回答询问，并协助调查，不得阻挠。你是否明白？
       </td>
       <td>
-      <input type="text" class="biaoge_23" value="答：" onfocus="this.value=''" onblur="this.value='答：" style="padding:0;">
+      <input id="visClear2" type="text" class="biaoge_23" value="答：" onfocus="this.value=''" onblur="this.value='答：" style="padding:0;">
       </td>
       <td>
-       被询问人：<input type="text" class="biaoge_22">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="biaoge_01"> 年<input type="text" class="biaoge_02"> 月<input type="text" class="biaoge_02"> 日
+       被询问人：<input type="text" class="biaoge_22" style="width: 300px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="vsignYear1" type="text" class="biaoge_01" style="width: 80px;"> 年<input id="vsignMonth1" type="text" class="biaoge_02"> 月<input id="vsignDay1" type="text" class="biaoge_02"> 日
       </td>
       <td>
-      询问人：<input type="text" class="biaoge_22" style="width:404px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="biaoge_01"> 年<input type="text" class="biaoge_02"> 月<input type="text" class="biaoge_02"> 日
+      询问人：<input type="text" class="biaoge_22" style="width: 327px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="vsignYear2" type="text" class="biaoge_01" style="width: 80px;"> 年<input id="vsignMonth2" type="text" class="biaoge_02"> 月<input id="vsignDay2" type="text" class="biaoge_02"> 日
       </td>
       <td>&nbsp;
          
@@ -93,20 +169,20 @@
          <b>问：</b>问：你的姓名、年龄和职业是什么？
       </td>
      <td>
-      <input type="text" class="biaoge_23" value="答：" onfocus="this.value=''" onblur="this.value='答：" style="padding:0;">
+      <input id="vanswer1" type="text" class="biaoge_23" value="答：" onfocus="this.value=''" onblur="this.value='答：" style="padding:0;">
       </td>
       <td>
          <b>问：</b><u><b>何年何月何日</b></u> ，共有多少位<u><b>呕吐腹泻病人</b></u>到你们医院<u><b>肠道门诊</b></u> （诊室）就诊？最早几点钟来就诊的？是哪个单位的？主要症状是什么？
       </td>
      <td>
-      <input type="text" class="biaoge_23" value="答：" onfocus="this.value=''" onblur="this.value='答：" style="padding:0;">
+      <input id="vanswer2" type="text" class="biaoge_23" value="答：" onfocus="this.value=''" onblur="this.value='答：" style="padding:0;">
       </td>
       
       <td>
          <b>问：</b>到现在为止病人病情怎么样？有没有生命危险？是否有死亡病例？
       </td>
      <td>
-      <input type="text" class="biaoge_23" value="答：" onfocus="this.value=''" onblur="this.value='答：" style="padding:0;">
+      <input id="vanswer3" type="text" class="biaoge_23" value="答：" onfocus="this.value=''" onblur="this.value='答：" style="padding:0;">
       </td>
       
       
@@ -114,7 +190,7 @@
          <b>问：</b>病人共同的症状是什么？你们确诊是什么病？都做了哪些临床治疗？治疗后效果如何？
       </td>
      <td>
-      <textarea class="biaoge_k" onfocus="if(value=='答：'){value=''}"  onblur="if (value ==''){value='答：'}" rows="3">答：</textarea>
+      <textarea id="vanswer4" class="biaoge_k" onfocus="if(value=='答：'){value=''}"  onblur="if (value ==''){value='答：'}" rows="3">答：</textarea>
       </td>
       
       
@@ -122,7 +198,7 @@
          <b>问：</b>最早来就诊的是谁？几点钟来就诊的？症状最重的是谁？主要症状是什么？病人做了哪些辅助检查，结果如何？做了霍乱排查了吗？
       </td>
      <td>
-      <textarea class="biaoge_k" onfocus="if(value=='答：'){value=''}"  onblur="if (value ==''){value='答：'}" rows="3">答：</textarea>
+      <textarea id="vanswer5" class="biaoge_k" onfocus="if(value=='答：'){value=''}"  onblur="if (value ==''){value='答：'}" rows="3">答：</textarea>
       </td>
       
       
@@ -131,7 +207,7 @@
          <b>问：</b>我们需要你们的门诊病例和临床检验资料是否能提供？
       </td>
      <td>
-      <input type="text" class="biaoge_23" value="答：" onfocus="this.value=''" onblur="this.value='答：" style="padding:0;">
+      <input id="vanswer6" type="text" class="biaoge_23" value="答：" onfocus="this.value=''" onblur="this.value='答：" style="padding:0;">
       </td>
       
       
@@ -140,14 +216,14 @@
          <b>问：</b>除了这些人，还有相同症状的病人吗？他们有在？就餐史吗？
       </td>
      <td>
-      <textarea class="biaoge_k" onfocus="if(value=='答：'){value=''}"  onblur="if (value ==''){value='答：'}" rows="3">答：</textarea>
+      <textarea id="vanswer7" class="biaoge_k" onfocus="if(value=='答：'){value=''}"  onblur="if (value ==''){value='答：'}" rows="3">答：</textarea>
       </td>
       
         <td>
          <b>问：</b>你还有其他要补充的吗？
       </td>
      <td>
-      <textarea class="biaoge_k" onfocus="if(value=='答：'){value=''}"  onblur="if (value ==''){value='答：'}" rows="8">答：</textarea>
+      <textarea id="vanswer8" class="biaoge_k" onfocus="if(value=='答：'){value=''}"  onblur="if (value ==''){value='答：'}" rows="8">答：</textarea>
       </td>
       
       
@@ -155,14 +231,14 @@
          <b>问：</b>以上是本次询问情况的记录，请核对/已向你宣读。如果属实请签名。
       </td>
      <td>
-      <input type="text" class="biaoge_23" value="答：" onfocus="this.value=''" onblur="this.value='答：" style="padding:0;">
+      <input id="vanswer9" type="text" class="biaoge_23" value="答：" onfocus="this.value=''" onblur="this.value='答：" style="padding:0;">
       </td>
       
       <td>
-       被询问人：<input type="text" class="biaoge_22">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="biaoge_01"> 年<input type="text" class="biaoge_02"> 月<input type="text" class="biaoge_02"> 日
+       被询问人：<input type="text" class="biaoge_22" style="width: 300px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="vsignYear3" type="text" class="biaoge_01" style="width: 80px;"> 年<input id="vsignMonth3" type="text" class="biaoge_02"> 月<input id="vsignDay3" type="text" class="biaoge_02"> 日
       </td>
       <td>
-      询问人：<input type="text" class="biaoge_22" style="width:404px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="biaoge_01"> 年<input type="text" class="biaoge_02"> 月<input type="text" class="biaoge_02"> 日
+      询问人：<input type="text" class="biaoge_22" style="width: 327px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="vsignYear4" type="text" class="biaoge_01" style="width: 80px;"> 年<input id="vsignMonth4" type="text" class="biaoge_02"> 月<input id="vsignDay4" type="text" class="biaoge_02"> 日
       </td>
       
     </tr>
@@ -170,10 +246,10 @@
 </table>
 <div class="row list_dy">
   <div class="col-xs-6">
-     <button type="button" class="btn btn-primary btn-lg btn-block gn_an03">保 存</button>
+     <button type="button" class="btn btn-primary btn-lg btn-block gn_an03" onClick="toSaveData();">保 存</button>
   </div>
   <div class="col-xs-6">
-     <button type="button" class="btn btn-default btn-lg btn-block gn_an03">打 印</button>
+     <button type="button" class="btn btn-default btn-lg btn-block gn_an03" onClick="toPrinter();">打 印</button>
   </div>
 </div>
 

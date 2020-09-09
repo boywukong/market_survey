@@ -1,6 +1,8 @@
 package com.tyh.marketresearch_shichangju.activity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -16,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import com.tyh.marketresearch_shichangju.R;
+import com.tyh.marketresearch_shichangju.util.ActivityUtil;
 import com.tyh.marketresearch_shichangju.util.MResource;
 
 import java.io.File;
@@ -26,7 +29,6 @@ public class ContentActivity extends AppCompatActivity {
     private ImageView btn_paizhao;
     private static final String TAG = "ContentActivity";
     private TextView tvRecorder;
-    private final int REQUEST_CODE = 111;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +55,7 @@ public class ContentActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //设置intent的属性为录音设置
                 Intent intent = new Intent(MediaStore.Audio.Media.RECORD_SOUND_ACTION);
-                startActivityForResult(intent, REQUEST_CODE);
+                startActivityForResult(intent, ActivityUtil.LUYIN_REQUEST_CODE);
             }
         });
     }
@@ -108,11 +110,32 @@ public class ContentActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
             //请求
-            if (requestCode == REQUEST_CODE) {
+            if (requestCode == ActivityUtil.LUYIN_REQUEST_CODE) {
                 //得到录音的音频文件及路径
                 String dataFile = data.getDataString();
                 Log.d(TAG, "dataFile: " + dataFile);
             }
+
+            if(requestCode == ActivityUtil.PAIZHAO_REQUEST_CODE) {
+                Bitmap photo = null;
+                //两种方式  获取拍好的图片
+                if (data.getData() != null || data.getExtras() != null){  //防止没有返回结果
+                    Uri uri = data.getData();
+                    if (uri != null) {
+                       photo = BitmapFactory.decodeFile(uri.getPath());   //拿到图片
+                    }
+                    if (photo == null) {
+                        Bundle bundle = data.getExtras();
+                        if (bundle != null) {
+                            photo = (Bitmap) bundle.get("data");
+                        } else {
+                            Toast.makeText(getApplicationContext(), "找不到图片", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }
+            }
         }
+
+
     }
 }

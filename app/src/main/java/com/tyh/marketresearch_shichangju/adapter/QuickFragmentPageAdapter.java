@@ -26,7 +26,7 @@ public class QuickFragmentPageAdapter <T extends Fragment> extends FragmentPager
 
     @Override
     public Fragment getItem(int position) {
-        Log.i("---into Fragment---",position+"");
+        //Log.i("----Fragment-position:=",+position+"");
         return mList.get(position);
     }
 
@@ -46,7 +46,7 @@ public class QuickFragmentPageAdapter <T extends Fragment> extends FragmentPager
     * */
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
-        Log.d("---Quick**Adapter---"," ------ Excute destroyItem(); none has done. ------ ");
-        return;
+        //Log.d("---Quick**Adapter---"," ------ Excute destroyItem(); none has done. ------ ");
+        super.destroyItem(container, position, object);
     }
 }

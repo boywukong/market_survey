@@ -1,87 +1,38 @@
 package com.tyh.marketresearch_shichangju.activity;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
+
 import android.annotation.TargetApi;
 import android.content.res.AssetManager;
-import android.content.res.Resources;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
 
 import com.google.android.material.tabs.TabLayout;
 import com.tyh.marketresearch_shichangju.R;
-import com.tyh.marketresearch_shichangju.fragment.FirstFragment;
-import com.tyh.marketresearch_shichangju.fragment.Fragmenta0101;
 import com.tyh.marketresearch_shichangju.util.ActivityUtil;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/*
- * MainActivity主要完成下面几件事：
- * 1.加载主页面布局
- * 2.预先完成程序相关目录和模板的拷贝
- * 3.设置Tab菜单的点击功能
- *
- **/
-public class MainActivity extends AppCompatActivity {
+public class TabMenuPageActivity extends AppCompatActivity {
 
     private WebView mWebView;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        //html5页面
-        WebView webview = (WebView) this.findViewById(R.id.indexview);
-        Log.i("----MainActivity----","file:///android_asset/html/home.html");
-
-        webview.getSettings().setUseWideViewPort(true);
-        webview.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
-        webview.getSettings().setLoadWithOverviewMode(true);
-        initView(webview);
-
-        webview.loadUrl("file:///android_asset/html/home.html");
-    }
-
-    @TargetApi(Build.VERSION_CODES.ECLAIR_MR1)
-    private void initView(WebView webView) {
-        this.mWebView = webView;
-        //可以执行javascript
-        this.mWebView.getSettings().setJavaScriptEnabled(true);
-        //android添加javascript代码，让H5页面能够调用，第二个参数对应的是H5的
-        this.mWebView.addJavascriptInterface(new MainActivity.PayJavaScriptInterface(), "js");
-    }
-
-    private class PayJavaScriptInterface {
-        @JavascriptInterface
-        //跳转到首页
-        public void jumpActivity(int param) {
-                ActivityUtil.jumpActivity(MainActivity.this,param);
-        }
-    }
-
-    /*private List<String> titles =new ArrayList<>(Arrays.asList("医院","现场"));
+    private List<String> titles =new ArrayList<>(Arrays.asList("医院","现场"));
     private List<Fragment> fragments;
     private int[] tabIcons = {
             R.mipmap.yiyuan_01,
@@ -95,8 +46,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_tab_menu_page);
 
+        initHeader();
         initTabLayout();
         //Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment);
 
@@ -127,9 +79,9 @@ public class MainActivity extends AppCompatActivity {
                                                  //fragmen跳转
                                                  private void setCurrentFragment(int position) {
                                                      if (position == 0) {
-                                                         Navigation.findNavController(MainActivity.this, R.id.fragment).navigate(R.id.firstFragment);
+                                                         Navigation.findNavController(TabMenuPageActivity.this, R.id.fragment).navigate(R.id.firstFragment);
                                                      } else {
-                                                         Navigation.findNavController(MainActivity.this, R.id.fragment).navigate(R.id.secondFragment);
+                                                         Navigation.findNavController(TabMenuPageActivity.this, R.id.fragment).navigate(R.id.secondFragment);
                                                      }
                                                  }
 
@@ -144,6 +96,36 @@ public class MainActivity extends AppCompatActivity {
                                                  }
                                              }
         );
+    }
+
+    private void initHeader(){
+        //html5页面
+        WebView webview = (WebView) this.findViewById(R.id.headerview);
+        Log.i("----MainActivity----","file:///android_asset/html/header.html");
+
+        webview.getSettings().setUseWideViewPort(true);
+        webview.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
+        webview.getSettings().setLoadWithOverviewMode(true);
+        initView(webview);
+
+        webview.loadUrl("file:///android_asset/html/header.html");
+    }
+
+    @TargetApi(Build.VERSION_CODES.ECLAIR_MR1)
+    private void initView(WebView webView) {
+        this.mWebView = webView;
+        //可以执行javascript
+        this.mWebView.getSettings().setJavaScriptEnabled(true);
+        //android添加javascript代码，让H5页面能够调用，第二个参数对应的是H5的
+        this.mWebView.addJavascriptInterface(new TabMenuPageActivity.PayJavaScriptInterface(), "js");
+    }
+
+    private class PayJavaScriptInterface {
+        @JavascriptInterface
+        //跳转到首页
+        public void jumpActivity(int param) {
+            ActivityUtil.jumpActivity(TabMenuPageActivity.this,param);
+        }
     }
 
     private void initTabLayout(){
@@ -232,16 +214,14 @@ public class MainActivity extends AppCompatActivity {
         img_title.setImageResource(tabIconsPressed[position]);
         //这里面有个bug,tab不会根据点选改变不同样式的图片
         //参见原文例子及demo:http://dditblog.com/itshare_616.html
-        *//*if (position == 0) {
+        /*if (position == 0) {
             txt_title.setTextColor(Color.YELLOW);
             img_title.setImageResource(tabIconsPressed[position]);
             img_title.setPadding(-5,0,-5,0);
         } else {
             txt_title.setTextColor(Color.WHITE);
             img_title.setImageResource(tabIcons[position]);
-        }*//*
+        }*/
         return view;
-    }*/
-
-
+    }
 }

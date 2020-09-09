@@ -15,8 +15,18 @@ import com.tyh.marketresearch_shichangju.R;
 import com.tyh.marketresearch_shichangju.activity.DetailPageActivity;
 import com.tyh.marketresearch_shichangju.adapter.TopicListAdapter;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
+/*
+ * FirstFragment主要完成下面几件事：
+ * 1.加载主页面上的Tab1中的菜单布局 list view
+ * 2. 给list view传递参数
+ * 3.加载 list view数据
+ * 4.设置 list view点击事件
+ *
+ **/
 public class FirstFragment extends Fragment {
 
     public FirstFragment() {
@@ -47,8 +57,10 @@ public class FirstFragment extends Fragment {
                                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                                 // Bundle传递数据
                                                 Bundle bundle = new Bundle();
+                                                bundle.putString("fragcode","01");
                                                 bundle.putString("topic",topics[position]);
                                                 bundle.putString("topiccode",topiccodes[position]);
+                                                bundle.putString("position",Integer.toString(position));
 
                                                 Intent intent = new Intent(getContext(), DetailPageActivity.class);
 
@@ -58,6 +70,7 @@ public class FirstFragment extends Fragment {
                                             }
                                         }
         );
+
 
         return contentView;
     }
